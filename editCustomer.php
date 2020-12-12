@@ -43,11 +43,11 @@
 <div>
 <?php
   $host='127.0.0.1'; //server ip address
-  $user='s4913757'; //you need to supply
-  $pwd='qXodmihNoP7VEhpxWHKEAMTkWknyKcCc'; //you need to supply
-  $db = $user; //database name
+  $user='root'; //you need to supply
+  $pwd=''; //you need to supply
+  $db = 'ticket-system'; //database name
   $conn = mysqli_connect($host, $user, $pwd, $db);
-
+  
   if (isset($_GET['id'])){ //think the overall logic then perfect it
 	if (isset($_POST['edit'])){
 	  $tID = $_POST['id'];

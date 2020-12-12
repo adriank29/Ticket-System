@@ -27,9 +27,9 @@
         <div class="card-body">
           <h3 class="card-title"><?php
             $host='127.0.0.1'; //server ip address
-            $user='s4913757'; //you need to supply
-            $pwd='qXodmihNoP7VEhpxWHKEAMTkWknyKcCc'; //you need to supply
-            $db = $user; //database name
+            $user='root'; //you need to supply
+            $pwd=''; //you need to supply
+            $db = 'ticket-system'; //database name
             $conn = mysqli_connect($host, $user, $pwd, $db);
 
             $query = "SELECT * FROM ticket_STAFF WHERE t_STATUS = 'CLOSED'";
@@ -50,16 +50,16 @@
         <div class="card-body">
           <h3 class="card-title"><?php
             $host='127.0.0.1'; //server ip address
-            $user='s4913757'; //you need to supply
-            $pwd='qXodmihNoP7VEhpxWHKEAMTkWknyKcCc'; //you need to supply
-            $db = $user; //database name
+            $user='root'; //you need to supply
+            $pwd=''; //you need to supply
+            $db = 'ticket-system'; //database name
             $conn = mysqli_connect($host, $user, $pwd, $db);
 
-            $query = "SELECT * FROM ticket_STAFF WHERE t_STATUS = 'OPEN'";
+            $query = "SELECT * FROM ticket_STAFF WHERE t_STATUS = 'CLOSED'";
             $result = mysqli_query($conn, $query);
             $total = mysqli_num_rows($result);
 
-            echo "<h3> There are $total open tickets</h3>";
+            echo "<h3> Currently $total Closed Tickets</h3>";
             mysqli_close($conn); //disconnect
           ?>
           </h3>
@@ -76,16 +76,16 @@
         <div class="card-body">
           <h3 class="card-title"><?php
             $host='127.0.0.1'; //server ip address
-            $user='s4913757'; //you need to supply
-            $pwd='qXodmihNoP7VEhpxWHKEAMTkWknyKcCc'; //you need to supply
-            $db = $user; //database name
+            $user='root'; //you need to supply
+            $pwd=''; //you need to supply
+            $db = 'ticket-system'; //database name
             $conn = mysqli_connect($host, $user, $pwd, $db);
 
-            $query = "SELECT * FROM ticket_CUSTOMER WHERE t_STATUS = 'CLOSED'";
+            $query = "SELECT * FROM ticket_STAFF WHERE t_STATUS = 'CLOSED'";
             $result = mysqli_query($conn, $query);
             $total = mysqli_num_rows($result);
 
-            echo "<h3> There are $total CLOSED tickets</h3>";
+            echo "<h3> Currently $total Closed Tickets</h3>";
             mysqli_close($conn); //disconnect
           ?></h3>
           <a href="dashboardClosedCustomer.php" class="btn btn-outline-info">View</a>
@@ -98,16 +98,16 @@
         <div class="card-body">
           <h3 class="card-title"><?php
             $host='127.0.0.1'; //server ip address
-            $user='s4913757'; //you need to supply
-            $pwd='qXodmihNoP7VEhpxWHKEAMTkWknyKcCc'; //you need to supply
-            $db = $user; //database name
+            $user='root'; //you need to supply
+            $pwd=''; //you need to supply
+            $db = 'ticket-system'; //database name
             $conn = mysqli_connect($host, $user, $pwd, $db);
 
-            $query = "SELECT * FROM ticket_CUSTOMER WHERE t_STATUS = 'OPEN'";
+            $query = "SELECT * FROM ticket_STAFF WHERE t_STATUS = 'CLOSED'";
             $result = mysqli_query($conn, $query);
             $total = mysqli_num_rows($result);
 
-            echo "<h3> There are $total open tickets</h3>";
+            echo "<h3> Currently $total Closed Tickets</h3>";
             mysqli_close($conn); //disconnect
           ?>
           </h3>
@@ -123,20 +123,19 @@
           <h2 class="card-header">Tickets In progress</h2>
           <div class="card-body">
             <h3 class="card-title"><?php
-              $host='127.0.0.1'; //server ip address
-              $user='s4913757'; //you need to supply
-              $pwd='qXodmihNoP7VEhpxWHKEAMTkWknyKcCc'; //you need to supply
-              $db = $user; //database name
-              $conn = mysqli_connect($host, $user, $pwd, $db);
+            $host='127.0.0.1'; //server ip address
+            $user='root'; //you need to supply
+            $pwd=''; //you need to supply
+            $db = 'ticket-system'; //database name
+            $conn = mysqli_connect($host, $user, $pwd, $db);
 
-              $query = "(SELECT * FROM ticket_STAFF WHERE t_STATUS = 'IN PROGRESS' )
-              UNION (SELECT * FROM ticket_CUSTOMER WHERE t_STATUS = 'IN PROGRESS' )";
-              $result = mysqli_query($conn, $query);
-              $total = mysqli_num_rows($result);
+            $query = "SELECT * FROM ticket_STAFF WHERE t_STATUS = 'CLOSED'";
+            $result = mysqli_query($conn, $query);
+            $total = mysqli_num_rows($result);
 
-              echo "<h3> There are $total tickets in progress</h3>";
-              mysqli_close($conn); //disconnect
-            ?></h3>
+            echo "<h3> Currently $total Closed Tickets</h3>";
+            mysqli_close($conn); //disconnect
+          ?></h3>
             <a href="dashboardTicketsInProgress.php" class="btn btn-outline-info">View</a>
           </div>
   	  </div>
@@ -146,20 +145,19 @@
           <h2 class="card-header">Check/Follow</h2>
           <div class="card-body">
             <h3 class="card-title"><?php
-              $host='127.0.0.1'; //server ip address
-              $user='s4913757'; //you need to supply
-              $pwd='qXodmihNoP7VEhpxWHKEAMTkWknyKcCc'; //you need to supply
-              $db = $user; //database name
-              $conn = mysqli_connect($host, $user, $pwd, $db);
+            $host='127.0.0.1'; //server ip address
+            $user='root'; //you need to supply
+            $pwd=''; //you need to supply
+            $db = 'ticket-system'; //database name
+            $conn = mysqli_connect($host, $user, $pwd, $db);
 
-              $query = "(SELECT * FROM ticket_STAFF WHERE t_STATUS = 'CHECK' )
-              UNION (SELECT * FROM ticket_CUSTOMER WHERE t_STATUS = 'FOLLOW' )";
-              $result = mysqli_query($conn, $query);
-              $total = mysqli_num_rows($result);
+            $query = "SELECT * FROM ticket_STAFF WHERE t_STATUS = 'CLOSED'";
+            $result = mysqli_query($conn, $query);
+            $total = mysqli_num_rows($result);
 
-              echo "<h3> There are $total Check/Follow Tickets</h3>";
-              mysqli_close($conn); //disconnect
-            ?></h3>
+            echo "<h3> Currently $total Closed Tickets</h3>";
+            mysqli_close($conn); //disconnect
+          ?></h3>
             <a href="checkfollow.php" class="btn btn-outline-info">View</a>
           </div>
         </div>
